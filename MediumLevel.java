@@ -40,21 +40,7 @@ public class MediumLevel extends Level {
 			setVisible(loc.getAdjacentLocation(Location.RIGHT), true);
 		}
 		if (!(get(loc) instanceof Wall)) {
-			Location nextLoc = null;
-			switch (direction) {
-			case Location.LEFT:
-				nextLoc = loc.getAdjacentLocation(Location.LEFT);
-				break;
-			case Location.RIGHT:
-				nextLoc = loc.getAdjacentLocation(Location.RIGHT);
-				break;
-			case Location.UP:
-				nextLoc = loc.getAdjacentLocation(Location.UP);
-				break;
-			case Location.DOWN:
-				nextLoc = loc.getAdjacentLocation(Location.DOWN);
-				break;
-			}
+			Location nextLoc = loc.getAdjacentLocation(direction);
 			if (isValid(nextLoc))
 				recursiveSetVisible(nextLoc, direction);
 		}
